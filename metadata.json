@@ -1,0 +1,6 @@
+{
+  "name": "DOOMLY",
+  "description": "A privacy-first digital wellbeing app by BYREX that tracks app usage time and estimated short-form video scrolls across Instagram Reels, YouTube Shorts, and TikTok.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

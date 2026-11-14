@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DOOMLY</string>
+    <string name="brand_byline">by BYREX</string>
+    <string name="accessibility_service_label">DOOMLY Scroll Estimator</string>
+    <string name="accessibility_service_description">Estimates vertical swipe activity inside Instagram Reels, YouTube Shorts, and TikTok feeds. DOOMLY never reads, stores, or transmits screen text, usernames, comments, or messages (canRetrieveWindowContent is disabled). Everything stays 100% local on your phone.</string>
+    <string name="brain_disclaimer">These labels are playful awareness indicators, not medical or scientific assessments.</string>
+    <string name="scroll_estimate_explanation">Android cannot directly count the exact number of Reels, Shorts, or TikTok videos viewed. DOOMLY estimates scrolls by observing vertical swipe gestures inside short-form video feeds when Accessibility permission is enabled. This number is an estimate that can be slightly off and may change when Instagram, YouTube, or TikTok update their apps.</string>
+    <string name="tracking_unavailable">Tracking unavailable</string>
+    <string name="not_installed">Not installed</string>
+    <string name="permission_missing">Permission missing</string>
+    <string name="scroll_tracking_off">Scroll tracking off</string>
+    <string name="tracking_active">Active</string>
+    <string name="estimated_scrolls_label">Estimated scrolls</string>
+    <string name="app_usage_time_label">App usage time</string>
+</resources>
