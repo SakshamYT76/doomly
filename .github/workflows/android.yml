@@ -12,11 +12,11 @@ permissions:
 
 jobs:
   build:
-    name: Build Android APK
+    name: Build Doomly Android APK
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Doomly
+      - name: Checkout Repository
         uses: actions/checkout@v6
 
       - name: Setup Java 17
@@ -27,17 +27,15 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6
-        with:
-          gradle-version: '9.3.1'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
 
-      - name: Install Android SDK packages
+      - name: Install Android SDK Packages
         run: |
-          sdkmanager "platforms;android-36-ext1" "build-tools;36.0.0"
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
 
-      - name: Generate debug signing key
+      - name: Generate Debug Keystore
         run: |
           keytool -genkeypair \
             -v \
@@ -50,12 +48,16 @@ jobs:
             -validity 10000 \
             -dname "CN=Android Debug,O=Android,C=US"
 
-      - name: Build Doomly APK
-        run: gradle :app:assembleDebug --no-daemon
+      - name: Make Gradle Executable
+        run: chmod +x gradlew
 
-      - name: Upload APK
+      - name: Build Doomly APK
+        run: ./gradlew :app:assembleDebug --no-daemon
+
+      - name: Upload Doomly APK
         uses: actions/upload-artifact@v4
         with:
           name: Doomly-APK
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+          retention-days: 14
